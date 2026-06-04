@@ -1,0 +1,337 @@
+@page {
+  margin: 16mm 14mm;
+}
+
+:root {
+  --text-primary: #1f2937;
+  --text-secondary: #374151;
+  --text-muted: #4b5563;
+  --heading: #1e3a5f;
+  --accent: #2589d0;
+  --accent-soft: #bfdbfe;
+  --rule-soft: #dbe4ee;
+}
+
+body {
+  color: var(--text-secondary);
+  font-family: "BIZ UDPGothic", "Yu Gothic UI", "Hiragino Sans", "Meiryo", sans-serif;
+  font-size: 11pt;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  position: relative;
+  padding: 0.3em 0 0.2em 1em;
+  border-bottom: 3px solid var(--accent);
+  color: var(--heading);
+  font-size: 22pt;
+  line-height: 1.35;
+  margin: 0 0 0.7em;
+  letter-spacing: 0.015em;
+  page-break-after: avoid;
+}
+
+h1::before {
+  position: absolute;
+  top: 0;
+  left: 0.3em;
+  transform: rotate(55deg);
+  height: 11px;
+  width: 12px;
+  background: var(--accent);
+  content: "";
+}
+
+h1::after {
+  position: absolute;
+  transform: rotate(15deg);
+  top: 0.6em;
+  left: 0;
+  height: 8px;
+  width: 8px;
+  background: var(--accent);
+  content: "";
+}
+
+h2 {
+  font-size: 16pt;
+  position: relative;
+  padding: 0.5em 1.2em;
+  color: var(--heading);
+  line-height: 1.4;
+  margin: 1.2em 0 0.7em;
+  letter-spacing: 0.01em;
+  page-break-after: avoid;
+}
+
+h2::before,
+h2::after {
+  display: inline-block;
+  position: absolute;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--accent);
+  content: "";
+}
+
+h2::before {
+  top: calc(50% - 3px);
+  left: 0;
+}
+
+h2::after {
+  top: calc(50% + 3px);
+  left: 5px;
+}
+
+h3 {
+  padding: 0.5em 0.7em;
+  border-left: 5px solid var(--accent);
+  color: var(--text-primary);
+  font-size: 13pt;
+  line-height: 1.45;
+  margin: 1em 0 0.5em;
+  letter-spacing: 0.01em;
+  page-break-after: avoid;
+}
+
+p {
+  color: var(--text-secondary);
+  margin: 0.4em 0 0.8em;
+}
+
+ul,
+ol {
+  margin: 0.3em 0 0.9em;
+  padding-left: 1.4em;
+}
+
+li {
+  margin: 0.22em 0;
+}
+
+h4 {
+  border-bottom: 2px solid var(--rule-soft);
+  color: var(--text-primary);
+  font-size: 11.5pt;
+  font-weight: 700;
+  margin: 0.9em 0 0.45em;
+  padding-bottom: 0.2em;
+  page-break-after: avoid;
+}
+
+h5 {
+  color: var(--text-primary);
+  font-size: 11.2pt;
+  font-weight: 700;
+  margin: 0.8em 0 0.35em;
+  padding: 0.22em 0.55em;
+  border-left: 3px solid var(--accent);
+  background: #f5f9ff;
+  border-radius: 0 4px 4px 0;
+  display: inline-block;
+  page-break-after: avoid;
+}
+
+/* ── コードブロック ── */
+pre {
+  position: relative;
+  background-color: #0d1117;
+  color: #c9d1d9;
+  border: 1px solid #30363d;
+  padding: 2.3em 1em 1em;
+  border-radius: 8px;
+  overflow: auto;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+}
+
+pre::before {
+  content: "Code";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1.9em;
+  display: flex;
+  align-items: center;
+  padding-left: 0.85em;
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #8b949e;
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+  border-radius: 8px 8px 0 0;
+}
+
+code {
+  background-color: #eef2f7;
+  color: #1f2937;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: "Cascadia Code", "Consolas", "SFMono-Regular", monospace;
+  font-size: 0.9em;
+}
+
+pre code {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+  font-size: inherit;
+}
+
+pre code.language-ts::before,
+pre code.language-tsx::before,
+pre code.language-js::before,
+pre code.language-javascript::before,
+pre code.language-json::before,
+pre code.language-py::before,
+pre code.language-python::before,
+pre code.language-sh::before,
+pre code.language-bash::before,
+pre code.language-sql::before,
+pre code.language-html::before,
+pre code.language-css::before {
+  position: absolute;
+  top: 0.35em;
+  right: 0.75em;
+  font-size: 8.5pt;
+  font-weight: 700;
+  color: #7dd3fc;
+}
+
+pre code.language-ts::before {
+  content: "TypeScript";
+}
+
+pre code.language-tsx::before {
+  content: "TSX";
+}
+
+pre code.language-js::before,
+pre code.language-javascript::before {
+  content: "JavaScript";
+}
+
+pre code.language-json::before {
+  content: "JSON";
+}
+
+pre code.language-py::before,
+pre code.language-python::before {
+  content: "Python";
+}
+
+pre code.language-sh::before,
+pre code.language-bash::before {
+  content: "Shell";
+}
+
+pre code.language-sql::before {
+  content: "SQL";
+}
+
+pre code.language-html::before {
+  content: "HTML";
+}
+
+pre code.language-css::before {
+  content: "CSS";
+}
+
+/* ── シンタックスハイライト（ライトテーマ）── */
+/* highlight.css は .vscode-light クラス��提のため、ブラウザ用に上書き */
+.hljs-function,
+.hljs-params,
+.hljs-class {
+  color: #d2a8ff;
+}
+
+.hljs-comment,
+.hljs-quote,
+.hljs-variable {
+  color: #8b949e;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-tag {
+  color: #ff7b72;
+}
+
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #ffa657;
+}
+
+.hljs-string,
+.hljs-section,
+.hljs-attribute,
+.hljs-literal,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type {
+  color: #a5d6ff;
+}
+
+.hljs-subst,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-meta,
+.hljs-meta-keyword {
+  color: #79c0ff;
+}
+
+.hljs-title,
+.hljs-doctag {
+  color: #d2a8ff;
+}
+
+.hljs-attr {
+  color: #79c0ff;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link {
+  color: #79c0ff;
+}
+
+.hljs-number {
+  color: #79c0ff;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: var(--text-secondary);
+  font-size: 10pt;
+  line-height: 1.55;
+  page-break-inside: avoid;
+}
+
+table tr:nth-child(2n) {
+  background: #ebf5ff;
+}
+
+table th {
+  text-align: center;
+  padding: 10px;
+  color: var(--text-primary);
+  background: #c7e2ff;
+  border-right: solid 1px #8ca5bf;
+}
+
+table td {
+  text-align: left;
+  padding: 10px;
+  border-right: solid 1px #8ca5bf;
+}
