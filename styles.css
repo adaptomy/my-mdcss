@@ -246,6 +246,20 @@ pre code.language-css::before {
   content: "CSS";
 }
 
+
+/* ── 表示形式の修整 ── */
+pre:has(code.language-mermaid)::before{
+  content: none;
+}
+
+pre:has(code.language-mermaid){
+  padding: 1em;
+  background-color: #ffffff;
+  border: 1px solid var(--rule-soft);
+}
+
+
+
 /* ── シンタックスハイライト（ライトテーマ）── */
 /* highlight.css は .vscode-light クラス��提のため、ブラウザ用に上書き */
 .hljs-function,
