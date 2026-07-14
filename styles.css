@@ -142,7 +142,7 @@ pre {
   background-color: #0d1117;
   color: #c9d1d9;
   border: 1px solid #30363d;
-  padding: 2.3em 1em 1em;
+  padding: 40px 1em 1em;
   border-radius: 8px;
   overflow: auto;
   line-height: 1.55;
@@ -157,9 +157,10 @@ pre::before {
   top: 0;
   left: 0;
   right: 0;
-  height: 1.9em;
+  height: 30px;
+  line-height: 30px;
   display: flex;
-  align-items: center;
+  align-items: unset;
   padding-left: 0.85em;
   font-size: 9pt;
   font-weight: 700;
